@@ -1,0 +1,11 @@
+body {
+    background-color: #eee;
+}
+
+.bookContainer {
+    outline: 1px solid #aaa;
+    width: 350px;
+    height: 130px;
+    background:-color: #fff;
+    
+}
