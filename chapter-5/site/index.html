@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Backbone.jsによるライブラリアプリケーション</title>
     <link rel="stylesheet" href="css/screen.css">
+    <link rel="stylesheet" href="css/ui-darkness/jquery-ui-1.10.4.custom.min.css">
   </head>
   <body>
     <div id="books">
@@ -35,14 +36,17 @@
       <ul>
         <li><%= title  %></li>
         <li><%= author  %></li>
-        <li><%= releaseDate  %></li>
-        <li><%= keywords  %></li>
+        <li><%= $.format.date(new Date(releaseDate), 'MMMM yyyy')  %></li>
+        <li><% _.each(keywords, function(keyobj) {%>
+               <%= keyobj.keyword %><% }); %></li>
       </ul>
 
       <button class="delete">削除</button>
     </script>
     
     <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/jquery-dateFormat.min.js"></script>
+    <script src="js/lib/jquery-ui-1.10.4.custom.min.js"></script>
     <script src="js/lib/underscore-min.js"></script>
     <script src="js/lib/backbone-min.js"></script>
     <script src="js/models/book.js"></script>
